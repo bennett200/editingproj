@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Letter
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Letter html rendering success</h1>
+    <hr/>
+    <ul>
+        {% for letter in object_list %}
+        <li>hi {{ letter.title }}</li>
+        {% endfor %}
+     
+    </ul>
+{% endblock content %}
