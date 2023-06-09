@@ -7,6 +7,7 @@ class Letter(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
     ending = models.CharField(max_length=50)
+    date_to_send = models.DateField()
     submitted = models.DateField(auto_now_add=True)
 
     
@@ -16,5 +17,8 @@ class Letter(models.Model):
     class Meta:
         ordering = ['-title']
         
+        
     def __str__(self):
-        return self.title
+        return f"""
+            First Name={self.first_name};
+        """

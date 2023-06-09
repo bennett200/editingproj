@@ -1,11 +1,24 @@
 @charset 'utf-8';
 
+* {
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+body {
+    background: darkcyan;
+}
 
 #main {
-    width: auto;
-    float: right;
-
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    color: black;
 }
 
 .header {
@@ -23,7 +36,7 @@
 
 .navbar a {
     font-size: 18px;
-    color: #ededed;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
