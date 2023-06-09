@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse_lazy
+
 # Create your models here.
 class Letter(models.Model):
     first_name = models.CharField(max_length=30, null=True)
@@ -12,7 +14,7 @@ class Letter(models.Model):
 
     
     def get_absolute_url(self):
-        return '/letter'
+        return reverse_lazy('letter', kwargs={"slug": self.slug})
     
     class Meta:
         ordering = ['-title']

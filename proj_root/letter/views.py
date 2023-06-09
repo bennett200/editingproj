@@ -2,7 +2,7 @@ from typing import Any, Dict
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 
 from .models import Letter
@@ -19,6 +19,13 @@ class CreateLetterView(CreateView):
     template_name = 'letter/create_letter.html'
     model = Letter
     form_class = LetterForm
+
+class UpdateLetterView(UpdateView):
+    template_name = 'letter/update_letter.html'
+    model = Letter
+    form_class = LetterForm
+    
+
     
     
     

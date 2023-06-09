@@ -9,7 +9,7 @@
 
     <title>
         {% block title %}
-        My title
+        Home Page
         {% endblock title %}
     </title>
   </head>
@@ -23,7 +23,6 @@
           <a class="nav-item{% if request.path == home %} current-page{% endif %}" href="{% url 'home' %}">Homepage</a>
           <a class="nav-item{% if request.path == letter %} current-page{% endif %}" href="{% url 'letter' %}">Your Letters</a>
           <a class="nav-item{% if request.path == create_letter %} current-page{% endif %}" href="{% url 'create_letter' %}">Create Letters</a>
-
         </nav>
       </header>
     {% endblock sidenav %}

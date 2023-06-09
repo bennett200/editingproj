@@ -22,7 +22,11 @@ Letter
         {% endfor %}
      
     </ul> -->
+    {% for letter in object_list %}
+        {% url 'update_letter' as update_letter %}
 
+        <a class="nav-item{% if request.path == update_letter %} current-page{% endif %}" href="{% url 'update_letter' letter.id %}">Update Letter</a>
+    {% endfor %}
     <table class="letter-table">
         <thead>
             <tr>
