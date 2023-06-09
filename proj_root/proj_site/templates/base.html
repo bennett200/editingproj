@@ -12,8 +12,21 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-  {% block content %}
-    <h1>this is base.html</h1>
-  {% endblock %}
+    {% block sidenav %}
+      <header class="header">
+        <nav class="navbar">
+          {% url 'create_letter' as create_letter %}
+          {% url 'letter' as letter %}
+          <a class="nav-item{% if request.path == letter %} current-page{% endif %}" href="{% url 'letter' %}">Your Letters</a>
+          <a class="nav-item{% if request.path == create_letter %} current-page{% endif %}" href="{% url 'create_letter' %}">Create Letters</a>
+
+        </nav>
+      </header>
+    {% endblock sidenav %}
+    <section id="main">
+      {% block content %}
+        <h1>this is base.html</h1>
+      {% endblock content %}
+    </section>
   </body>
 </html>
