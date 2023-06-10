@@ -2,7 +2,7 @@ from typing import Any, Dict
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from .models import Letter
@@ -27,7 +27,11 @@ class UpdateLetterView(UpdateView):
     form_class = LetterForm
     success_url = reverse_lazy('letter')
     
-
+class DeleteLetterView(DeleteView):
+    template_name = 'letter/delete_letter.html'
+    model = Letter
+    form_class = LetterForm
+    success_url = reverse_lazy('letter')
     
     
     
