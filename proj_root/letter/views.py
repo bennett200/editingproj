@@ -30,7 +30,6 @@ class UpdateLetterView(UpdateView):
 class DeleteLetterView(DeleteView):
     template_name = 'letter/delete_letter.html'
     model = Letter
-    form_class = LetterForm
     success_url = reverse_lazy('letter')
     
     

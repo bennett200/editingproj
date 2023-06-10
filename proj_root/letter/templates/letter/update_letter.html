@@ -8,8 +8,14 @@ Update Letter
 {% block content %}
     <h1>Update Your Letter</h1>
     <form method="post">
-        {{ form }}
+        {{ form.as_p }}
         <input type="submit" value="Update"/>
     {% csrf_token%}
     </form>
+    <div>
+        {% url 'delete_letter' as delete_letter %}
+        <p><a id="delete-letter-a" class="nav-update-a{% if request.path == delete_letter %} current-page{% endif %}" href="{% url 'delete_letter' %}">Delete Letter</a></p>
+       
+    </div>
+   
 {% endblock content %}
