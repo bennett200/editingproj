@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-
-{% block title %}
-Letter
-{% endblock title %}
+{% load static %} 
+{% block title %}Letter{% endblock %}
+{% block head %}
+{% endblock %}
 
 
 
@@ -22,27 +22,27 @@ Letter
         {% endfor %}
      
     </ul> -->
-    {% for letter in object_list %}
-        {% url 'update_letter' as update_letter %}
-
-        <a class="nav-item{% if request.path == update_letter %} current-page{% endif %}" href="{% url 'update_letter' letter.id %}">Update Letter</a>
-    {% endfor %}
-    <table class="letter-table">
-        <thead>
-            <tr>
-                <th>Recipient</th>
-                <th>Title</th>
-                <th>Submission Date</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for letter in object_list %}
-            <tr>
-                <td>{{ letter.send_to }}</td>
-                <td>{{ letter.title }}</td>
-                <td>{{ letter.submitted }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    
+    <div class="container">
+        <table class="letter-table">
+            <thead>
+                <tr>
+                    <th>Click to Update</th>
+                    <th>Sending to</th>
+                    <th>Title</th>
+                    <th>Date Submitted</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for letter in object_list %}
+                <tr> 
+                    <td><a id="update-letter-a" class="nav-update-a{% if request.path == update_letter %} current-page{% endif %}" href="{% url 'update_letter' letter.id %}">{{ letter.id}}</a></td>
+                    <td>{{ letter.send_to }}</td>
+                    <td>{{ letter.title }}</td>
+                    <td>{{ letter.submitted }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock content %}

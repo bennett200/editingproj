@@ -17,7 +17,7 @@ class Letter(models.Model):
         return reverse_lazy('letter', kwargs={"slug": self.slug})
     
     class Meta:
-        ordering = ['-title']
+        ordering = ['submitted']
         
         
     def __str__(self):

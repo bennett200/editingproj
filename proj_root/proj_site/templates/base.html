@@ -1,22 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'proj_site/main.css' %}" />
 
     <title>
         {% block title %}
         Home Page
         {% endblock title %}
     </title>
+    {% block head %}{% endblock head %}
   </head>
   <body>
-    {% block sidenav %}
-      <header class="header">
-        <nav class="navbar">
+    {% block topnav %}
+      <header class="base-header">
+        <nav class="base-navbar">
           {% url 'create_letter' as create_letter %}
           {% url 'letter' as letter %}
           {% url 'home' as home %}
@@ -25,7 +27,7 @@
           <a class="nav-item{% if request.path == create_letter %} current-page{% endif %}" href="{% url 'create_letter' %}">Create Letters</a>
         </nav>
       </header>
-    {% endblock sidenav %}
+    {% endblock topnav %}
     <section id="main">
       {% block content %}
         <h1>this is base.html</h1>

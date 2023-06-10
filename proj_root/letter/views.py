@@ -19,11 +19,13 @@ class CreateLetterView(CreateView):
     template_name = 'letter/create_letter.html'
     model = Letter
     form_class = LetterForm
+    success_url = reverse_lazy('letter')
 
 class UpdateLetterView(UpdateView):
     template_name = 'letter/update_letter.html'
     model = Letter
     form_class = LetterForm
+    success_url = reverse_lazy('letter')
     
 
     

@@ -1,0 +1,150 @@
+@charset 'utf-8';
+
+* {
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: darkcyan;
+}
+
+
+#main {
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    color: black;
+}
+
+
+
+
+
+.base-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content:left; 
+    align-items: center;
+    z-index: 100;
+}
+
+.base-navbar a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.base-navbar a:hover,
+.base-navbar a.active {
+    color: #00abf0;
+}
+
+
+
+
+
+
+/* .letter-sidenav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    z-index: 100;
+    
+}
+
+.letter-sidenav a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    
+}
+
+.letter-sidenav a:hover,
+.letter-sidenav a.active {
+    color: #00abf0;
+}
+
+.letter-table-div {
+    float: left;
+}
+
+
+.letter-table-div {
+    float:left;
+    clear: left;
+} */
+
+
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}

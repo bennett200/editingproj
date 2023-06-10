@@ -10,3 +10,4 @@ class LetterForm(forms.ModelForm):
             'last_name': ('Last Name'),
             'date_to_send': ('''Date to be sent(YYYY-MM-DD)''')
         }
+        
