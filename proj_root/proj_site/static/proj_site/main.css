@@ -24,7 +24,9 @@ body {
 
 
 
-
+.delete-letter-form a {
+    text-decoration: none;
+}
 
 .base-navbar {
     position: fixed;
