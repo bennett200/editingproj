@@ -1,3 +1,5 @@
 Editingproj goal
 
 create a website that functions as a notebook/letter creater that will send to a chosen email at a specific date.
+
+add first and last name fields for letter
