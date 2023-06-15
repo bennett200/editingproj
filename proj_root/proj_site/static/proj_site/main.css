@@ -150,3 +150,18 @@ tbody {
 		}
 	}
 }
+
+.boxed {
+    width:250px;
+    padding-top:5px;
+    border-style:solid;
+    border-color:#336699;
+    border-width:1px;
+    padding-left:3px;
+    padding-bottom:10px;
+    word-wrap: break-word;
+    height: 250pxa;
+    /* text-align: justify;
+    width: 100px; */
+    overflow-y: scroll;
+}

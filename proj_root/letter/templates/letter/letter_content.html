@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title %}Letter Content{% endblock title%}
+
+{% block content %}
+    <div>
+        <h1>This is your letter content (: </h1>
+        <div class="boxed">
+            <p class="letter_content_display">{{ letter.content }}</p>
+        </div> 
+    </div>
+  
+{% endblock content %}

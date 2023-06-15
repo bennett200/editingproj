@@ -8,4 +8,5 @@ urlpatterns = [
     path('letter/create', views.CreateLetterView.as_view(), name='create_letter'),
     path('letter/<slug:pk>/update', views.UpdateLetterView.as_view(), name='update_letter'),
     path('letter/<slug:pk>/delete', views.DeleteLetterView.as_view(), name='delete_letter'),
+    path('letter/<slug:pk>/content', views.LetterContentView.as_view(), name='content_view_letter'),
 ]

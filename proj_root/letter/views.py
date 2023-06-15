@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 
 from .models import Letter
@@ -31,6 +32,16 @@ class DeleteLetterView(DeleteView):
     template_name = 'letter/delete_letter.html'
     model = Letter
     success_url = reverse_lazy('letter')
+    
+
+class LetterContentView(DetailView):
+    template_name = 'letter/letter_content.html'
+    model = Letter
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['letter_content'] = Letter.content
+        return context
     
     
         

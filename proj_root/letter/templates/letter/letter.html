@@ -27,20 +27,22 @@
         <table class="letter-table">
             <thead>
                 <tr>
-                    <th>Click to Update</th>
+                    <th>Title(click to open)</th>
                     <th>Sending to</th>
-                    <th>Title</th>
                     <th>Date Submitted</th>
+                    <th>Click to Update</th>
                     <th>Click to Delete</th>
                 </tr>
             </thead>
             <tbody>
             {% for letter in object_list %}
                 <tr> 
-                    <td><a id="update-letter-a" class="nav-update-a{% if request.path == update_letter %} current-page{% endif %}" href="{% url 'update_letter' letter.id %}">Update</a></td>
+                    <!--<td>{{ letter.title }}</td>-->
+                    <td><a id="view_content_letter" class="nav-view_content-a{% if request.path == content_view_letter %} current-page{% endif %}" href="{% url 'content_view_letter' letter.id %}">{{ letter.title }}</a></td>
                     <td>{{ letter.send_to }}</td>
-                    <td>{{ letter.title }}</td>
                     <td>{{ letter.submitted }}</td>
+                    <td><a id="update-letter-a" class="nav-update-a{% if request.path == update_letter %} current-page{% endif %}" href="{% url 'update_letter' letter.id %}">Update</a></td>
+
                     <td><a id="delete-letter-a" class="nav-delete-a{% if request.path == delete_letter %} current-page{% endif %}" href="{% url 'delete_letter' letter.id %}">Delete</a></td>
                 </tr>
             {% endfor %}
