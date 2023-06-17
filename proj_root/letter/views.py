@@ -45,7 +45,7 @@ class LetterContentView(DetailView):
     
     
 class LetterUserView(CreateView):
-    template_name = 'letter/letter_user.html'
+    template_name = 'letter/create_letter_user.html'
     model = Letter
     form_class = LetterUserForm
     success_url = reverse_lazy('letter')
