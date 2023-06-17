@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Anonymous Letters User{% endblock title %}
+
+{% block content %}
+    <h1>Create Your User!</h1>
+    <form method="post">
+        <div class="letter-user">
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </div>
+        {% csrf_token %}
+    </form>
+
+{% endblock content %}
