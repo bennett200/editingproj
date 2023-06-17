@@ -1,5 +1,5 @@
 from django import forms
-from .models import Letter
+from .models import Letter, LetterUser
 
 class LetterForm(forms.ModelForm):
     class Meta:
@@ -11,3 +11,12 @@ class LetterForm(forms.ModelForm):
             'date_to_send': ('''Date to be sent(YYYY-MM-DD)''')
         }
 
+class LetterUserForm(forms.ModelForm):
+    class Meta:
+        model = LetterUser
+        fields = '__all__'
+        labels = {
+            'first_name': ('First Name'), 
+            'last_name': ("Last Name"),
+            'email': ('Email')
+        }
