@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Letter
+from .models import Letter, LetterUser
 # Register your models here.
 
 class LetterAdmin(admin.ModelAdmin):
@@ -17,3 +17,4 @@ class LetterAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Letter, LetterAdmin)
+admin.site.register(LetterUser)
