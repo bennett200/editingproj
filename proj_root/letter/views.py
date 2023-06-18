@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 
-from .models import Letter
+from .models import Letter, LetterUser
 from .forms import LetterForm, LetterUserForm
 # Create your views here.
 class HomeView(TemplateView):
@@ -44,9 +44,14 @@ class LetterContentView(DetailView):
         return context
     
     
-class LetterUserView(CreateView):
+class LetterUserView(ListView):
+    template_name = 'letter/letter_user.html'
+    model = LetterUser
+    
+    
+class CreateLetterUser(CreateView):
     template_name = 'letter/create_letter_user.html'
-    model = Letter
+    model = LetterUser
     form_class = LetterUserForm
     success_url = reverse_lazy('letter')
     
