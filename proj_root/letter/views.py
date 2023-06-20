@@ -5,6 +5,9 @@ from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
+
+
 
 from .models import Letter, LetterUser
 from .forms import LetterForm, LetterUserForm
@@ -47,13 +50,15 @@ class LetterContentView(DetailView):
 class LetterUserView(ListView):
     template_name = 'letter/letter_user.html'
     model = LetterUser
-    
+    paginate_by = 3
+
     
 class CreateLetterUser(CreateView):
     template_name = 'letter/create_letter_user.html'
     model = LetterUser
     form_class = LetterUserForm
-    success_url = reverse_lazy('letter')
+    success_url = reverse_lazy('letter_user')
+    
     
     
         

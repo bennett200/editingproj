@@ -4,28 +4,46 @@
 {% block title %}Your Users{% endblock title %}
 
 {% block content %}
-    <h1>Welcome to Your Users</h1>
+    <div> 
+        <h1>Welcome to Your Users</h1>
+        {% url 'create_letter_user' as create_letter_user %}
+        <div><a class="nav-item{% if request.path == create_letter_user %} current-page{% endif %}" href="{% url 'create_letter_user' %}">Create a User</a></div>
+          <div class="container">
+            <table class="letter-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in object_list %}
+                    <tr>
+                        <td>placeholder for id</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% if is_paginated %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="/letter/user?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
 
-    <div class="container">
-        <table class="letter-table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for user in object_list %}
-                <tr>
-                    <td>placeholder for id</td>
-                    <td>{{ user.first_name }}</td>
-                    <td>{{ user.last_name }}</td>
-                    <td>{{ user.email }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                {% if page_obj.has_next %}
+                <a href="/letter/user?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endblock content %} 
