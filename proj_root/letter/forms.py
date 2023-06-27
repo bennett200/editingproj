@@ -10,10 +10,10 @@ class LetterForm(forms.ModelForm):
             'last_name': ('Last Name(of recipiant)'),
             'date_to_send': ('''Date to be sent(YYYY-MM-DD)''')
         }
-    # class Media:
-    #     css - {
-    #         'all': ('form.css',)
-    #     }
+    class Media:
+        css = {
+            'all': ('form.css',)
+        }
 
 class LetterUserForm(forms.ModelForm):
     class Meta:
@@ -23,4 +23,8 @@ class LetterUserForm(forms.ModelForm):
             'first_name': ('First Name'), 
             'last_name': ("Last Name"),
             'email': ('Email')
+        }
+    class Media:
+        css = {
+            'all': ('form.css',)
         }

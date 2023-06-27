@@ -3,13 +3,14 @@
 {% block title %}
 Create Letter
 {% endblock title %}
+{% block styles %}{{ form.media }}{% endblock styles %}
 
 {% block content %}
     <h1>Create Your Letter!</h1>
     <form method="post">
         <div>
             {{ form.as_p }}
-            <input type="submit" value="submit"/>
+            <input id="submit" type="submit" value="submit"/>
         </div>
         {% csrf_token %}
     </form>

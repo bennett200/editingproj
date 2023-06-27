@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-right: 10px;
+}
+
+input, textarea {
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    border: 3px solid #000000;
+
+    animation: myAnim 2s ease 0s 1 normal forwards;
+
+
+}
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+#submit {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 20px;
+    font: bold;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+}
