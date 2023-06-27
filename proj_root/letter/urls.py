@@ -11,4 +11,5 @@ urlpatterns = [
     path('letter/<slug:pk>/content', views.LetterContentView.as_view(), name='content_view_letter'),
     path('letter/user', views.LetterUserView.as_view(), name='letter_user'),
     path('letter/user/create', views.CreateLetterUser.as_view(), name='create_letter_user'),
+    path('letter/friends/', views.FriendView.as_view(), name='friend-url'),
 ]

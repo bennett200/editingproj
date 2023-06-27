@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Friends{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <table class="friend-table">
+        <thead>
+            <tr>
+                <th>Click to Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for friend in object_list %}
+            <tr>
+                <td>{{ friend.friend_nick }}</td> 
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

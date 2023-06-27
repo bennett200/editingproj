@@ -33,3 +33,16 @@ class LetterUser(models.Model):
     def __str__(self):
         return self.first_name + ' ' + self.last_name
     
+    
+class Friends(models.Model):
+    friend_nick = models.CharField(max_length=20, unique=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    friend_email = models.EmailField("Friend Email")
+    
+    class Meta:
+        verbose_name_plural = 'Friends'
+    
+    def __str__(self):
+        return self.friend_nick
+    

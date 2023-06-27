@@ -9,8 +9,8 @@ from django.core.paginator import Paginator
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Letter, LetterUser
-from .forms import LetterForm, LetterUserForm
+from .models import Letter, LetterUser, Friends
+from .forms import LetterForm, LetterUserForm, FriendsForm
 # Create your views here.
 class HomeView(TemplateView):
     template_name = 'base.html'
@@ -77,6 +77,11 @@ class Register(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.save()
         return HttpResponseRedirect(self.success_url)
+
+class FriendView(ListView):
+    template_name = 'letter/friend_list.html'
+    form_class = FriendsForm
+    model = Friends
     
     
         
